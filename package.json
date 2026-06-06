@@ -27,5 +27,9 @@
   "bugs": {
     "url": "https://github.com/dominhnhat24/vietprodev-challenges/issues"
   },
-  "homepage": "https://github.com/dominhnhat24/vietprodev-challenges#readme"
+  "homepage": "https://github.com/dominhnhat24/vietprodev-challenges#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "sequelize-cli": "^6.6.5"
+  }
 }
