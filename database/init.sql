@@ -5,7 +5,7 @@ CREATE TABLE Users (
     phone_number VARCHAR(20) NOT NULL UNIQUE
 );
 
-CREATE TABLE Authentication (
+CREATE TABLE "Authentication" (
     auth_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL UNIQUE,
     username VARCHAR(100) NOT NULL UNIQUE,
@@ -19,7 +19,7 @@ CREATE TABLE Roles (
     role_name VARCHAR(50) NOT NULL UNIQUE
 );
 
-CREATE TABLE Authorization (
+CREATE TABLE "Authorization" (
     authorization_id SERIAL PRIMARY KEY,
     auth_id INT NOT NULL,
     role_id INT NOT NULL,
@@ -67,15 +67,15 @@ CREATE INDEX idx_users_email ON Users(email);
 CREATE INDEX idx_users_phone ON Users(phone_number);
 
 -- AUTHENTICATION INDEX
-CREATE INDEX idx_auth_user_id ON Authentication(user_id);
-CREATE INDEX idx_auth_username ON Authentication(username);
+CREATE INDEX idx_auth_user_id ON "Authentication"(user_id);
+CREATE INDEX idx_auth_username ON "Authentication"(username);
 
 -- ROLES INDEX
 CREATE INDEX idx_roles_role_name ON Roles(role_name);
 
 -- AUTHORIZATION INDEX (RBAC TABLE)
-CREATE INDEX idx_authorization_auth_id ON Authorization(auth_id);
-CREATE INDEX idx_authorization_role_id ON Authorization(role_id);
+CREATE INDEX idx_authorization_auth_id ON "Authorization"(auth_id);
+CREATE INDEX idx_authorization_role_id ON "Authorization"(role_id);
 
 -- COURSES INDEX
 CREATE INDEX idx_courses_course_name ON Courses(course_name);
