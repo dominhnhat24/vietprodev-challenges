@@ -24,7 +24,7 @@ CREATE TABLE "Authorization" (
     auth_id INT NOT NULL,
     role_id INT NOT NULL,
 
-    CONSTRAINT fk_authorization_auth FOREIGN KEY (auth_id) REFERENCES Authentication(auth_id),
+    CONSTRAINT fk_authorization_auth FOREIGN KEY (auth_id) REFERENCES "Authentication"(auth_id),
     CONSTRAINT fk_authorization_role FOREIGN KEY (role_id) REFERENCES Roles(role_id)
 );
 

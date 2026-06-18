@@ -16,7 +16,7 @@ INSERT INTO Users (full_name, email, phone_number) VALUES
 -- ======================
 -- USER AUTH (10 records)
 -- ======================
-INSERT INTO Authentication (user_id, username, password_hash) VALUES
+INSERT INTO "Authentication" (user_id, username, password_hash) VALUES
 (1,'user_a','hash1'),
 (2,'user_b','hash2'),
 (3,'user_c','hash3'),
@@ -37,7 +37,7 @@ INSERT INTO Roles (role_name) VALUES
 -- ======================
 -- AUTHORIZATION (RBAC)
 -- ======================
-INSERT INTO Authorization (auth_id, role_id) VALUES
+INSERT INTO "Authorization" (auth_id, role_id) VALUES
 (1,1),
 (2,2),
 (3,3),
@@ -57,7 +57,12 @@ INSERT INTO Courses (course_name, description) VALUES
 ('Database Design', 'Learn database design'),
 ('Web Development', 'Frontend + Backend basic'),
 ('API Design', 'REST API fundamentals'),
-('System Design', 'High level architecture');
+('System Design', 'High level architecture'),
+('Frontend ReactJS', 'Build user interfaces with ReactJS'),
+('DevOps Basics', 'Learn deployment and CI/CD basics'),
+('Testing Fundamentals', 'Learn unit testing and integration testing'),
+('Security Basics', 'Learn authentication, authorization, and API security'),
+('Cloud Computing', 'Learn cloud concepts and backend deployment');
 
 -- ======================
 -- CLASSES

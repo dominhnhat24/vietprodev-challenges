@@ -13,7 +13,7 @@ const getAllClasses = asyncHandler(async (req, res) => {
 });
 
 const getClassById = asyncHandler(async (req, res) => {
-    const classItem = await classService.getClassById(req.params.id);
+    const classItem = await classService.getClassById(req.params.id); //req.params.id: định nghĩa một vị trí ID
 
     return successResponse(res, {
         message: 'Class retrieved successfully',
@@ -56,3 +56,6 @@ module.exports = {
     updateClass,
     deleteClass
 };
+
+//hiểu được tác dụng của async hadler 
+//done chall2
