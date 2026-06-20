@@ -1,6 +1,5 @@
 const {body} = require('express-validator');
 
-
 const validateRegister = [
     body('email')
         .exists({ checkFalsy: true })
@@ -33,6 +32,21 @@ const validateRegister = [
         .withMessage('Password must contain at least one special character')
 ];
 
+const validateLogin = [
+    body('email')
+        .exists({ checkFalsy: true })
+        .withMessage('Email is required')
+        .bail()
+        .isEmail()
+        .withMessage('Please provide a valid email')
+        .normalizeEmail(),
+
+    body('password')
+        .exists({ checkFalsy: true })
+        .withMessage('Password is required')
+];
+
 module.exports = {
-    validateRegister
+    validateRegister,
+    validateLogin
 };

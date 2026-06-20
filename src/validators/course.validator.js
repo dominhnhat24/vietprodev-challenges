@@ -10,7 +10,7 @@ const validateCreateCourse = [
         .bail()
         .isLength({ min: 2, max: 255 })
         .withMessage('course_name must be between 2 and 255 characters'),
-
+        
     body('description')
         .optional({ nullable: true })
         .isString()
